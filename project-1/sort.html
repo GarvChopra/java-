@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sort.css">
+</head>
+<body>
+    <h1>Sorting names to ascending</h1>
+    <form>
+        <label id="nom" for="names" class="name-label">Enter names separated by commas:</label><br><br>
+        <input type="text" id="names" name="names" size="50"><br><br>
+        <input type="button" value="Sort Names" onclick="sortNames()">
+    </form>
+    <h2>Sorted Names:</h2>
+    <p id="result"></p>
+    <script>
+        function sortNames() {
+            const namesInput = document.getElementById('names').value;
+            const namesArray = namesInput.split(',').map(name => name.trim());
+            namesArray.sort();
+            const sortedNames = namesArray.join(', ');
+            document.getElementById('result').innerText = sortedNames;
+        }
+    </script>
+</body>
+</html>
