@@ -47,7 +47,7 @@ public class Login extends JFrame  implements ActionListener {
         try {
             String username = textusername.getText();
             String password = textuserpassword.getText();
-            conn c = new conn(); 
+            conn1 c = new conn1(); 
             
 
 

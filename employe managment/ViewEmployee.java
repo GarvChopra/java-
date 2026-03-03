@@ -24,7 +24,7 @@ public class ViewEmployee extends JFrame implements ActionListener{
         add(cemployeeId);
         
         try {
-            conn c = new conn();
+            conn1 c = new conn1();
             ResultSet rs = c.s.executeQuery("select * from employee");
             while(rs.next()) {
                 cemployeeId.add(rs.getString("empid"));   // FIXED
@@ -36,7 +36,7 @@ public class ViewEmployee extends JFrame implements ActionListener{
         table = new JTable();
         
         try {
-            conn c = new conn();
+            conn1 c = new conn1();
             ResultSet rs = c.s.executeQuery("select * from employee");
             table.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (Exception e) {
@@ -76,7 +76,7 @@ public class ViewEmployee extends JFrame implements ActionListener{
         if (ae.getSource() == search) {
             String query = "select * from employee where empid = '"+cemployeeId.getSelectedItem()+"'"; 
             try {
-                conn c = new conn();
+                conn1 c = new conn1();
                 ResultSet rs = c.s.executeQuery(query);
                 table.setModel(DbUtils.resultSetToTableModel(rs));
             } catch (Exception e) {

@@ -58,7 +58,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
         cempId.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent ie) {
                 try {
-                    conn c = new conn();
+                    conn1 c = new conn1();
                     String query = "select * from employee where empId='" + cempId.getSelectedItem() + "'";
                     ResultSet rs = c.s.executeQuery(query);
                     while (rs.next()) {
@@ -79,7 +79,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
         
 
         try {
-            conn c =new conn();
+            conn1 c =new conn1();
             String query = "select * from employee";
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()){
@@ -90,7 +90,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
             e.printStackTrace();
         }
         try {
-            conn c =new conn();
+            conn1 c =new conn1();
             String query = "select * from employee where empId='"+cempId.getSelectedItem()+"'";
             ResultSet rs = c.s.executeQuery(query);
             while(rs.next()){
@@ -111,7 +111,7 @@ public class RemoveEmployee extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==delete){
             try {
-                conn c =new conn();
+                conn1 c =new conn1();
                 String query = "delete from employee where empId='"+cempId.getSelectedItem()+"'";
                 c.s.executeUpdate(query);
                 JOptionPane.showMessageDialog(null, "Employee Deleted Successfully");
