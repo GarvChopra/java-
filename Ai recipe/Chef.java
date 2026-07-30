@@ -1,6 +1,7 @@
 public class Chef {
     private String name;
     private int experienceYears;
+    private int num;
 
     public Chef(String name, int experienceYears) {
         this.name = name;
